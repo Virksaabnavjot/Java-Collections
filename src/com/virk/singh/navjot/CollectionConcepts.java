@@ -24,7 +24,11 @@ public class CollectionConcepts {
 		// remove product
 		removeProductsUsingIterator(condition);
 		removeProductsUsingIterator(conditions);
+		//print products
 		printProducts();
+		//other methods into play
+		runOtherAvailableCommonCollectionMethods(products);
+
 	}
 
 	public static void createNewProduct(String name, int weight) {
@@ -79,6 +83,21 @@ public class CollectionConcepts {
 
 	}//end of function
 
+	public static void runOtherAvailableCommonCollectionMethods(Collection<Product> products) {
+		printMessage("size(): "+products.size());
+		printMessage("isEmpty(): "+products.isEmpty());
+		printMessage("contains(element): "+products.contains(new Product("Temperory Product",80)));
+		products.add(new Product("Temperory Product",80)); //add element at the begining of the collection
+		printProducts();
+		printMessage("-------addAll()-------------");
+		Collection<Product> temperoryProducts = products;
+		products.addAll(temperoryProducts); //add all elements of argument collection to this collection
+		printProducts();
+		printMessage("--------clear()------------");
+		products.clear();
+		printProducts();
+	
+	}
 	public static void printMessage(String message) {
 		System.out.println(message);
 	}
