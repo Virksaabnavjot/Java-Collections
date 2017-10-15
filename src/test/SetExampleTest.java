@@ -65,7 +65,6 @@ class SetExampleTest {
 		      assertNotNull(1);
 		      assertEquals(1, 1);
 		    });
-		
 	}
 
 }
