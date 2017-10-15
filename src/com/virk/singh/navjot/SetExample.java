@@ -23,6 +23,37 @@ public class SetExample {
 		// adding values to the set (HashSet) and printing the values
 		names = addValuesTo(names);
 		prettyPrint("HashSet Results", names.toString());
+		
+		//example 1 - iteration through the set
+		for(String name: names) {
+			println(name);
+		}
+		
+		//example 2 - does set contains a given element
+		String name = "Navjot Singh"; //change this value to test for different names
+		if(names.contains(name) == true) {
+			println("Set Contains: "+name+" == "+true);
+		}else {
+			println("Set Contains: "+name+" == "+false);
+		}
+		
+		//example 2 - using a switch statement
+		int i = 0; //since switch doesn't work with booleans, for demo purpose we will use 0 for false, and 1 for true
+		if(names.contains(name)==true) {
+			i = 1;
+		}else { i = 0; }
+		switch(i) {
+		case 0:
+			println("Set Contains: "+name+" == "+false);
+			break;
+		case 1:
+			println("Set Contains: "+name+" == "+true);
+			break;
+		default: 
+			println("Something went wrong");
+			break;
+		}
+		
 
 		// adding the values to LinkedHashSet (this set remembers the order) and printing
 		namesInOrder = addValuesTo(namesInOrder);
@@ -31,6 +62,8 @@ public class SetExample {
 		// adding the values to TreeSet(this set sorts the elements) and printing
 		sortedNames = addValuesTo(sortedNames);
 		prettyPrint("TreeSet Results", sortedNames.toString());
+		
+		
 	}
 
 	/*
