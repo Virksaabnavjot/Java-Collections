@@ -1,0 +1,44 @@
+package test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.HashSet;
+import java.util.Set;
+import org.junit.jupiter.api.Test;
+import com.virk.singh.navjot.SetExample;
+import static nsv.custom.utilities.Print.*;
+
+class SetExampleTest {
+	//JUnit 4 vs Junit 5 | https://howtoprogram.xyz/2016/08/10/junit-5-vs-junit-4/
+	@Test
+	void testSize() {
+		SetExample s = new SetExample();
+		Set <String> names = new HashSet<>();
+		names = s.addValuesTo(names);
+		println(names.toString());
+		
+		//assertEquals(expected value, actual value)
+		assertEquals(6, names.size());	
+	}
+	
+	@Test
+	void testIsEmpty() {
+		SetExample s = new SetExample();
+		Set <String> names = new HashSet<>();
+		
+		assertEquals(true, names.isEmpty());
+	}
+	
+	@Test
+	void testContains() {
+		SetExample s = new SetExample();
+		Set <String> names = new HashSet<>();
+		names = s.addValuesTo(names);
+		
+		//Asserts that a condition is true.
+		assertTrue(names.contains("Navjot Singh"));
+		//Asserts that a condition is false.
+		assertFalse(names.contains("Cat"));
+	}
+
+}

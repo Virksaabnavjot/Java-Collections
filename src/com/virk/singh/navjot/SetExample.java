@@ -42,6 +42,7 @@ public class SetExample {
 		if(names.contains(name)==true) {
 			i = 1;
 		}else { i = 0; }
+		
 		switch(i) {
 		case 0:
 			println("Set Contains: "+name+" == "+false);
@@ -54,7 +55,6 @@ public class SetExample {
 			break;
 		}
 		
-
 		// adding the values to LinkedHashSet (this set remembers the order) and printing
 		namesInOrder = addValuesTo(namesInOrder);
 		prettyPrint("LinkedHashSet Results", namesInOrder.toString());
@@ -62,8 +62,7 @@ public class SetExample {
 		// adding the values to TreeSet(this set sorts the elements) and printing
 		sortedNames = addValuesTo(sortedNames);
 		prettyPrint("TreeSet Results", sortedNames.toString());
-		
-		
+
 	}
 
 	/*
