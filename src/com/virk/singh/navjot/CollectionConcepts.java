@@ -3,6 +3,7 @@ package com.virk.singh.navjot;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import static nsv.custom.utilities.Print.*;
 
 public class CollectionConcepts {
 
@@ -33,14 +34,14 @@ public class CollectionConcepts {
 
 	public static void createNewProduct(String name, int weight) {
 		Product product = new Product(name, weight);
-		printMessage("Newly added Product " + product);
+		println("Newly added Product " + product);
 		products.add(product);
 	}
 
 	public static void printProducts() {
 		// printing all the products using for-each loop
 		for (Product product : products) {
-			printMessage(product.toString());
+			println(product.toString());
 		}
 	}
 
@@ -59,10 +60,10 @@ public class CollectionConcepts {
 				//nested if-else statement
 				if (product.getWeight() < condition.getCondition()) {
 					iterator.remove();
-					printMessage("Product was removed becuase Weight = " + product.getWeight() + " and condition was: "
+					println("Product was removed becuase Weight = " + product.getWeight() + " and condition was: "
 							+ condition.getCondition() + "");
 				} else {
-					printMessage("Product was NOT removed becuase Weight = " + product.getWeight()
+					println("Product was NOT removed becuase Weight = " + product.getWeight()
 							+ " and condition was: " + condition.getCondition() + "");
 				}
 			} //end of if statement
@@ -71,12 +72,12 @@ public class CollectionConcepts {
 				int arrayOfConditions[]= condition.getConditions();
 				for(int conditions: arrayOfConditions) {
 			    index++;
-				printMessage("Index "+index+" and Condition: "+conditions);
+				println("Index "+index+" and Condition: "+conditions);
 				}
 				
 			}
 			else {
-				printMessage("Something went wrong with action");
+				println("Something went wrong with action");
 			}//end of else statement
 			
 		}//end of while loop
@@ -84,21 +85,19 @@ public class CollectionConcepts {
 	}//end of function
 
 	public static void runOtherAvailableCommonCollectionMethods(Collection<Product> products) {
-		printMessage("size(): "+products.size());
-		printMessage("isEmpty(): "+products.isEmpty());
-		printMessage("contains(element): "+products.contains(new Product("Temperory Product",80)));
+		println("size(): "+products.size());
+		println("isEmpty(): "+products.isEmpty());
+		println("contains(element): "+products.contains(new Product("Temperory Product",80)));
 		products.add(new Product("Temperory Product",80)); //add element at the begining of the collection
 		printProducts();
-		printMessage("-------addAll()-------------");
+		println("-------addAll()-------------");
 		Collection<Product> temperoryProducts = products;
 		products.addAll(temperoryProducts); //add all elements of argument collection to this collection
 		printProducts();
-		printMessage("--------clear()------------");
+		println("--------clear()------------");
 		products.clear();
 		printProducts();
 	
 	}
-	public static void printMessage(String message) {
-		System.out.println(message);
-	}
+	
 }
