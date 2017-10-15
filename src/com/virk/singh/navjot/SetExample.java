@@ -11,7 +11,11 @@ public class SetExample {
 
 	// HashSet | Use where order and sorting is not important
 	private static Set<String> names = new HashSet<>();
+	
+	//LinkedHashet | Use where the order in which elements are added is important
 	private static Set<String> namesInOrder = new LinkedHashSet<>();
+	
+	//TreeSet | Use where you require sorted results
 	private static Set<String> sortedNames = new TreeSet<>();
 
 	public static void main(String[] args) {
@@ -20,8 +24,7 @@ public class SetExample {
 		names = addValuesTo(names);
 		prettyPrint("HashSet Results", names.toString());
 
-		// adding the values to LinkedHashSet (this set remembers the order) and
-		// printing
+		// adding the values to LinkedHashSet (this set remembers the order) and printing
 		namesInOrder = addValuesTo(namesInOrder);
 		prettyPrint("LinkedHashSet Results", namesInOrder.toString());
 
