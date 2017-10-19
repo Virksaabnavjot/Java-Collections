@@ -3,6 +3,10 @@ package com.virk.singh.navjot;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+
+import com.virk.singh.navjot.helperclasses.MyCondition;
+import com.virk.singh.navjot.helperclasses.Product;
+
 import static nsv.custom.utilities.Print.*;
 
 public class CollectionConcepts {

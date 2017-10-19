@@ -1,4 +1,4 @@
-package com.virk.singh.navjot;
+package com.virk.singh.navjot.helperclasses;
 
 public class Product {
 	
