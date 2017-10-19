@@ -9,30 +9,74 @@ import java.util.HashMap;
 
 public class HashMapExample {
 
-	private static HashMap<Store, Book> bookStore = new HashMap<>();
+	// this map stores store as key and book as value for the HashMap
+	private static HashMap<Store, Book> availableBooksInDifferentStores = new HashMap<>();
+
+	// this map stores store as key and an array of books as Vale for the HashMap
+	private static HashMap<Store, Book[]> bookStores = new HashMap<>();
+
+	// this arraylist stores all the books
 	private static ArrayList<Book> books = new ArrayList<>();
+
+	// this arraylist stores all the stores available
 	private static ArrayList<Store> stores = new ArrayList<>();
 
 	public static void main(String[] args) {
 		getBooks();
-		getStores();
+		printAllBooks();
+		printBookAtIndex(0);
 
-		print();
+		getStores();
+		printAllStores();
+
+		addAvailableBooksInDifferentStoresToTheHashMap();
+		addBooksToTheStores();
+		printAllTheBooksInAnStore();
 
 	}
 
-	private static void print() {
-		printBookAtIndex(0);
-		printAllBooks();
-		printAllStores();
+	private static void printAllTheBooksInAnStore() {
+		prettyPrint("", "There are " + bookStores.size() + " Stores available in the bookStores HashMap");
+		int index = 1;
+		Book[] booksArray = bookStores.get(stores.get(index));
+		println("There are " + booksArray.length + " books available in this book store - Store Name: "
+				+ stores.get(index).getName());
+
+		// printing all the available books in a store
+		for (Book book : booksArray) {
+			println(book.getName());
+		}
+	}
+
+	private static void addBooksToTheStores() {
+		Book[] booksArray = new Book[books.size()]; // setting the array size to the size of books arrayList
+		for (int i = 0; i <= stores.size() - 1; i++) {
+			for (int j = 0; j <= books.size() - 1; j++) {
+				Book book = books.get(j);
+				booksArray[j] = book;
+				println(booksArray[j].getName());
+				bookStores.put(stores.get(i), booksArray);
+			}
+			println("Store name: " + stores.get(i).getName());
+		}
+	}
+
+	private static void addAvailableBooksInDifferentStoresToTheHashMap() {
+		for (int i = 0; i <= stores.size() - 1; i++) {
+			for (int j = 0; j <= books.size() - 1; j++) {
+				availableBooksInDifferentStores.put(stores.get(i), books.get(j));
+				println("Store name: " + stores.get(i).getName() + " ----- Book Name: " + books.get(j).getName());
+			}
+		}
 	}
 
 	private static void getBooks() {
 		books.add(new Book("The Jungle King", new String[] { "Billu Cheetah", "Gillu Lion", "Tillu Monkey" }));
 		books.add(new Book("Gym and Nutrition", new String[] { "Navjot Singh Virk" }));
 		books.add(new Book("Money Machine", new String[] { "Chiku Robbins", "Chuck Adams" }));
+		books.add(new Book("Foreign Students Misery", new String[] { "Navjot Singh Virk" }));
 	}
-	
+
 	private static void getStores() {
 		stores.add(new Store("Easons"));
 		stores.add(new Store("Twinkle Tisons"));
