@@ -12,7 +12,7 @@ public class HashMapExample {
 	// this map stores store as key and book as value for the HashMap
 	private static HashMap<Store, Book> availableBooksInDifferentStores = new HashMap<>();
 
-	// this map stores store as key and an array of books as Vale for the HashMap
+	// this map stores store as key and an array of books as Value for the HashMap
 	private static HashMap<Store, Book[]> bookStores = new HashMap<>();
 
 	// this arraylist stores all the books
@@ -41,11 +41,13 @@ public class HashMapExample {
 		Book[] booksArray = bookStores.get(stores.get(index));
 		println("There are " + booksArray.length + " books available in this book store - Store Name: "
 				+ stores.get(index).getName());
-
+		booksArray[0].setName("New Edition: The Jungle Book");
+		bookStores.put(stores.get(index), booksArray);
 		// printing all the available books in a store
 		for (Book book : booksArray) {
 			println(book.getName());
 		}
+
 	}
 
 	private static void addBooksToTheStores() {
