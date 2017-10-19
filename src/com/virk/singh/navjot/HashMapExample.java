@@ -32,6 +32,12 @@ public class HashMapExample {
 		books.add(new Book("Gym and Nutrition", new String[] { "Navjot Singh Virk" }));
 		books.add(new Book("Money Machine", new String[] { "Chiku Robbins", "Chuck Adams" }));
 	}
+	
+	private static void getStores() {
+		stores.add(new Store("Easons"));
+		stores.add(new Store("Twinkle Tisons"));
+
+	}
 
 	private static void printBookAtIndex(int index) {
 		Book book = books.get(index);
@@ -62,12 +68,6 @@ public class HashMapExample {
 			}
 			println("---------------------------");
 		}
-	}
-
-	private static void getStores() {
-		stores.add(new Store("Easons"));
-		stores.add(new Store("Twinkle Tisons"));
-
 	}
 
 	private static void printAllStores() {
