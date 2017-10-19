@@ -38,11 +38,13 @@ public class HashMapExample {
 	private static void printAllTheBooksInAnStore() {
 		prettyPrint("", "There are " + bookStores.size() + " Stores available in the bookStores HashMap");
 		int index = 1;
+		
 		Book[] booksArray = bookStores.get(stores.get(index));
+		booksArray[0].setName("New Edition: The Jungle Book");//updating a books name
+		bookStores.put(stores.get(index), booksArray);
 		println("There are " + booksArray.length + " books available in this book store - Store Name: "
 				+ stores.get(index).getName());
-		booksArray[0].setName("New Edition: The Jungle Book");
-		bookStores.put(stores.get(index), booksArray);
+		
 		// printing all the available books in a store
 		for (Book book : booksArray) {
 			println(book.getName());
